@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{7F388EF0-B776-4716-86A4-899FD79B2EAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", "{7D2557E9-864A-4023-95BD-614798001BC7}"
+	ProjectSection(SolutionItems) = preProject
+		Build\Properties\common-build.props = Build\Properties\common-build.props
+		Directory.Build.Props = Directory.Build.Props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{8D5793DF-A7A5-4DD6-8EB5-7CAF1D02F4A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{96FDAE62-B686-420D-87C1-22952B7017BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unstoppable.Blazor.LocalStorage", "Libraries\Unstoppable.Blazor.LocalStorage\Unstoppable.Blazor.LocalStorage.csproj", "{9A373B55-CE87-4311-B355-AF5C5387AE65}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unstoppable.Blazor.Data", "Libraries\Unstoppable.Blazor.Data\Unstoppable.Blazor.Data.csproj", "{03DF2D0E-C142-43BC-AF73-4ECF80E9ED35}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Unstoppable.Blazor.StandaloneClient", "Examples\Example.Unstoppable.Blazor.StandaloneClient\Example.Unstoppable.Blazor.StandaloneClient.csproj", "{3376B5E1-2F8D-4F8E-A839-04566259B003}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{062E9DFF-AC86-4A6E-9014-7CBF3FB72442}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A373B55-CE87-4311-B355-AF5C5387AE65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A373B55-CE87-4311-B355-AF5C5387AE65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A373B55-CE87-4311-B355-AF5C5387AE65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A373B55-CE87-4311-B355-AF5C5387AE65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03DF2D0E-C142-43BC-AF73-4ECF80E9ED35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03DF2D0E-C142-43BC-AF73-4ECF80E9ED35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03DF2D0E-C142-43BC-AF73-4ECF80E9ED35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03DF2D0E-C142-43BC-AF73-4ECF80E9ED35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3376B5E1-2F8D-4F8E-A839-04566259B003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3376B5E1-2F8D-4F8E-A839-04566259B003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3376B5E1-2F8D-4F8E-A839-04566259B003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3376B5E1-2F8D-4F8E-A839-04566259B003}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7F388EF0-B776-4716-86A4-899FD79B2EAA} = {062E9DFF-AC86-4A6E-9014-7CBF3FB72442}
+		{7D2557E9-864A-4023-95BD-614798001BC7} = {7F388EF0-B776-4716-86A4-899FD79B2EAA}
+		{9A373B55-CE87-4311-B355-AF5C5387AE65} = {8D5793DF-A7A5-4DD6-8EB5-7CAF1D02F4A1}
+		{03DF2D0E-C142-43BC-AF73-4ECF80E9ED35} = {8D5793DF-A7A5-4DD6-8EB5-7CAF1D02F4A1}
+		{3376B5E1-2F8D-4F8E-A839-04566259B003} = {96FDAE62-B686-420D-87C1-22952B7017BE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B0B8D13-1966-4344-A82D-A8374806631B}
+	EndGlobalSection
+EndGlobal

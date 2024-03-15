@@ -1,0 +1,49 @@
+﻿@page "/counter"
+@using global::Unstoppable.Blazor
+
+@inject LocalStorage LocalStorage
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount.Current</p>
+@if (lastUpdated != DateTime.MinValue)
+{
+  <p role="status">
+    Last updated @lastUpdated
+  </p>
+}
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-secondary" @onclick="ClearStore">Clear store</button>
+
+@code {
+  private CounterDetails currentCount = new();
+  private DateTime lastUpdated = DateTime.MinValue;
+
+  protected override async Task OnInitializedAsync()
+  {
+    CounterDetails? counter = await LocalStorage.GetAsync<CounterDetails>("counter");
+    lastUpdated = await LocalStorage.GetAsync<DateTime>("lastUpdate");
+    if (counter is null)
+    {
+      await LocalStorage.SetAsync("counter", currentCount);
+      counter = await LocalStorage.GetAsync<CounterDetails>("counter");
+    }
+
+    currentCount = counter!;
+  }
+
+  private async Task IncrementCount()
+  {
+    currentCount.Current++;
+    lastUpdated = DateTime.Now;
+    await LocalStorage.SetAsync("counter", currentCount);
+    await LocalStorage.SetAsync("lastUpdate", lastUpdated);
+  }
+
+  private async Task ClearStore()
+  {
+    await LocalStorage.ClearStoreAsync();
+  }
+
+}

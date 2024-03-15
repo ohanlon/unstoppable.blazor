@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="../../Build/Properties/common-build.props" />
+
+	<PropertyGroup>
+		<PackageId>Unstoppable.Blazor.LocalStorage</PackageId>
+		<PackageTags>Blazor;Unstoppable Blazor;UnstoppableBlazor;Components;ASP.NET Core;ASP.NET;CSharp;Web;Local Storage;LocalStorage</PackageTags>
+
+	</PropertyGroup>
+</Project>
