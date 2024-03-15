@@ -1,7 +1,7 @@
 ﻿@page "/counter"
 @using global::Unstoppable.Blazor
 
-@inject AsyncLocalStorage AsyncLocalStorage
+@inject LocalStorageAsync LocalStorageAsync
 <PageTitle>Counter</PageTitle>
 
 <h1>Counter</h1>
@@ -24,12 +24,12 @@
 
   protected override async Task OnInitializedAsync()
   {
-    CounterDetails? counter = await AsyncLocalStorage.GetAsync<CounterDetails>("counter");
-    lastUpdated = await AsyncLocalStorage.GetAsync<DateTime>("lastUpdate");
+    CounterDetails? counter = await LocalStorageAsync.GetItem<CounterDetails>("counter");
+    lastUpdated = await LocalStorageAsync.GetItem<DateTime>("lastUpdate");
     if (counter is null)
     {
-      await AsyncLocalStorage.SetAsync("counter", currentCount);
-      counter = await AsyncLocalStorage.GetAsync<CounterDetails>("counter");
+      await LocalStorageAsync.SetItem("counter", currentCount);
+      counter = await LocalStorageAsync.GetItem<CounterDetails>("counter");
     }
 
     currentCount = counter!;
@@ -39,13 +39,13 @@
   {
     currentCount.Current++;
     lastUpdated = DateTime.Now;
-    await AsyncLocalStorage.SetAsync("counter", currentCount);
-    await AsyncLocalStorage.SetAsync("lastUpdate", lastUpdated);
+    await LocalStorageAsync.SetItem("counter", currentCount);
+    await LocalStorageAsync.SetItem("lastUpdate", lastUpdated);
   }
 
   private async Task ClearStore()
   {
-    await AsyncLocalStorage.ClearStoreAsync();
+    await LocalStorageAsync.ClearStoreAsync();
     currentCount = new();
     lastUpdated = DateTime.MinValue;
   }

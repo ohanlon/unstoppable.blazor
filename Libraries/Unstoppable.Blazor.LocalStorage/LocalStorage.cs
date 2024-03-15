@@ -8,7 +8,7 @@ namespace Unstoppable.Blazor;
 public class LocalStorage(IJSInProcessRuntime runtime) : CoreStorage
 {
   [RequiresUnreferencedCode("localStorage.getItem")]
-  public virtual T? Get<T>(string key)
+  public virtual T? GetItem<T>(string key)
   {
     ExceptionDispatchInfo? exceptionDispatchInfo = null;
     T? result = default;

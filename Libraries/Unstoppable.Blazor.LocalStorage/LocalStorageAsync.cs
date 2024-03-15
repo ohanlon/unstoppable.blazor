@@ -4,9 +4,9 @@ using Microsoft.JSInterop;
 
 namespace Unstoppable.Blazor;
 
-public class AsyncLocalStorage(IJSRuntime runtime) : CoreStorage
+public class LocalStorageAsync(IJSRuntime runtime) : CoreStorage
 {
-  public virtual async ValueTask<T?> GetAsync<T>(string key, CancellationToken cancellationToken = default)
+  public virtual async ValueTask<T?> GetItem<T>(string key, CancellationToken cancellationToken = default)
   {
     ExceptionDispatchInfo? exceptionDispatchInfo = null;
     T? result = default;
@@ -27,11 +27,11 @@ public class AsyncLocalStorage(IJSRuntime runtime) : CoreStorage
     return result;
   }
 
-  public virtual async Task SetAsync<T>(string key, T value, CancellationToken cancellationToken = default)
+  public virtual async Task SetItem<T>(string key, T value, CancellationToken cancellationToken = default)
   {
     if (value is null)
     {
-      await RemoveAsync(key, cancellationToken);
+      await RemoveItem(key, cancellationToken);
       return;
     }
 
@@ -65,7 +65,7 @@ public class AsyncLocalStorage(IJSRuntime runtime) : CoreStorage
     }
   }
 
-  public virtual async Task RemoveAsync(string key, CancellationToken cancellationToken = default)
+  public virtual async Task RemoveItem(string key, CancellationToken cancellationToken = default)
   {
     ExceptionDispatchInfo? exceptionDispatchInfo = null;
     try
