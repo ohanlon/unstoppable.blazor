@@ -5,7 +5,6 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<RootNamespace>Unstoppable.Blazor</RootNamespace>
-		<IsAotCompatible>true</IsAotCompatible>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 

@@ -2,8 +2,10 @@
 	<Import Project="../../Build/Properties/common-build.props" />
 
 	<PropertyGroup>
+		<Description>This library provides the ability to easily manage local storage in Blazor applications. With this library, you can save primitive types and complex structures to local storage without having to worry about serializing or deserializing the content yourself.</Description>
 		<PackageId>Unstoppable.Blazor.LocalStorage</PackageId>
 		<PackageTags>Blazor;Unstoppable Blazor;UnstoppableBlazor;Components;ASP.NET Core;ASP.NET;CSharp;Web;Local Storage;LocalStorage</PackageTags>
-
+		<PackageProjectUrl>https://github.com/ohanlon/unstoppable.blazor/tree/main/Libraries/Unstoppable.Blazor.LocalStorage</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/ohanlon/unstoppable.blazor/tree/main/Libraries/Unstoppable.Blazor.LocalStorage</RepositoryUrl>
 	</PropertyGroup>
 </Project>

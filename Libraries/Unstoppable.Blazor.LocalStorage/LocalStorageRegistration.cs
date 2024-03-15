@@ -4,5 +4,6 @@ namespace Unstoppable.Blazor;
 
 public static class LocalStorageRegistration
 {
-  public static void AddLocalStorage(this IServiceCollection services) => services.AddScoped<LocalStorage>();
+  public static void AddLocalStorage(this IServiceCollection services) =>
+    services.AddScoped<AsyncLocalStorage>().AddScoped<LocalStorage>();
 }

@@ -1,14 +1,14 @@
 ﻿@page "/"
 @using global::Unstoppable.Blazor
 
-@inject LocalStorage LocalStorage
+@inject AsyncLocalStorage AsyncLocalStorage
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 
 <DataContainer HasData="@HasVisited">
   <NoData>
-    Welcome to your new app. This is your first visitor.
+    Welcome to your new app. This is your first visit.
   </NoData>
   <Template>
     Welcome happy visitor. You last visited on @lastVisited
@@ -20,8 +20,8 @@
 
   protected override async Task OnInitializedAsync()
   {
-    lastVisited = await LocalStorage.GetAsync<DateTime>("lastVisited");
-    await LocalStorage.SetAsync("lastVisited", DateTime.Now);
+    lastVisited = await AsyncLocalStorage.GetAsync<DateTime>("lastVisited");
+    await AsyncLocalStorage.SetAsync("lastVisited", DateTime.Now);
   }
 
   private bool HasVisited => lastVisited != DateTime.MinValue;
